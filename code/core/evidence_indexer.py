@@ -681,6 +681,7 @@ class EvidenceIndexer:
         for snap in data.get("snapshots", []):
             dstore = snap.get("data_store")
             collection = snap.get("collection")
+            item_cat = snap.get("captured_at") or captured_at
             for rec in snap.get("records", []):
                 rid = rec.get("resource_id")
                 idents = set()

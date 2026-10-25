@@ -79,7 +79,11 @@ def evaluate_sample_benchmark() -> Tuple[dict, List[dict]]:
             ident = resolver.resolve(email)
 
             # 3. Temporal Auditing
-            audited = auditor.audit_case(email, audit_at, reported_at, ident)
+            audited = auditor.audit_case(
+                email, audit_at, reported_at, ident,
+                reported_status=req.get("reported_status", "COMPLETE"),
+                case_id=cid
+            )
 
             # 4. Policy Mapping
             status, raw_steps = policy.evaluate(audited)

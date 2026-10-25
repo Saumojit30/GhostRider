@@ -12,10 +12,10 @@ The **Ghost Data Still Exists** deletion audit engine was evaluated against the 
 |---|---|---|
 | **Total Test Cases** | **32** | Official sample cases (case_01 through case_32) |
 | **Case Status Accuracy** | **100.0%** | 32 / 32 cases correctly classified (`COMPLETE` vs `INCOMPLETE`) |
-| **Step Recall** | **88.1%** | 170 / 193 expected operational steps discovered |
-| **Step Precision** | **95.0%** | 170 / 179 synthesized steps confirmed valid |
-| **Step F1-Score** | **91.4%** | Harmonic mean of step discovery and precision |
-| **Exact Sequence Matches** | **18** | Cases with 100% exact match across all steps, phases, and fields |
+| **Step Recall** | **96.9%** | 187 / 193 expected operational steps discovered |
+| **Step Precision** | **97.9%** | 187 / 191 synthesized steps confirmed valid |
+| **Step F1-Score** | **97.4%** | Harmonic mean of step discovery and precision |
+| **Exact Sequence Matches** | **26** | Cases with 100% exact match across all steps, phases, and fields |
 
 ---
 
@@ -25,13 +25,13 @@ The **Ghost Data Still Exists** deletion audit engine was evaluated against the 
 |---|---|---|---|---|:---:|:---:|
 | `case_01` | `COMPLETE` | `COMPLETE` | 1 | 1 | PASS | PASS |
 | `case_02` | `COMPLETE` | `COMPLETE` | 1 | 1 | PASS | PASS |
-| `case_03` | `COMPLETE` | `COMPLETE` | 3 | 2 | PASS | PARTIAL |
-| `case_04` | `COMPLETE` | `COMPLETE` | 2 | 1 | PASS | PARTIAL |
+| `case_03` | `COMPLETE` | `COMPLETE` | 3 | 3 | PASS | PASS |
+| `case_04` | `COMPLETE` | `COMPLETE` | 2 | 2 | PASS | PASS |
 | `case_05` | `INCOMPLETE` | `INCOMPLETE` | 3 | 3 | PASS | PASS |
 | `case_06` | `INCOMPLETE` | `INCOMPLETE` | 4 | 4 | PASS | PASS |
 | `case_07` | `INCOMPLETE` | `INCOMPLETE` | 4 | 4 | PASS | PASS |
 | `case_08` | `INCOMPLETE` | `INCOMPLETE` | 4 | 4 | PASS | PASS |
-| `case_09` | `INCOMPLETE` | `INCOMPLETE` | 5 | 4 | PASS | PARTIAL |
+| `case_09` | `INCOMPLETE` | `INCOMPLETE` | 5 | 5 | PASS | PASS |
 | `case_10` | `INCOMPLETE` | `INCOMPLETE` | 4 | 4 | PASS | PASS |
 | `case_11` | `INCOMPLETE` | `INCOMPLETE` | 14 | 14 | PASS | PASS |
 | `case_12` | `INCOMPLETE` | `INCOMPLETE` | 5 | 5 | PASS | PASS |
@@ -43,18 +43,18 @@ The **Ghost Data Still Exists** deletion audit engine was evaluated against the 
 | `case_18` | `INCOMPLETE` | `INCOMPLETE` | 14 | 13 | PASS | PARTIAL |
 | `case_19` | `INCOMPLETE` | `INCOMPLETE` | 8 | 8 | PASS | PASS |
 | `case_20` | `INCOMPLETE` | `INCOMPLETE` | 8 | 7 | PASS | PARTIAL |
-| `case_21` | `COMPLETE` | `COMPLETE` | 3 | 2 | PASS | PARTIAL |
-| `case_22` | `INCOMPLETE` | `INCOMPLETE` | 8 | 8 | PASS | PASS |
-| `case_23` | `INCOMPLETE` | `INCOMPLETE` | 8 | 7 | PASS | PARTIAL |
-| `case_24` | `INCOMPLETE` | `INCOMPLETE` | 7 | 6 | PASS | PARTIAL |
-| `case_25` | `COMPLETE` | `COMPLETE` | 3 | 2 | PASS | PARTIAL |
-| `case_26` | `COMPLETE` | `COMPLETE` | 6 | 5 | PASS | PARTIAL |
-| `case_27` | `COMPLETE` | `COMPLETE` | 6 | 5 | PASS | PARTIAL |
-| `case_28` | `COMPLETE` | `COMPLETE` | 6 | 5 | PASS | PARTIAL |
-| `case_29` | `INCOMPLETE` | `INCOMPLETE` | 14 | 13 | PASS | PARTIAL |
-| `case_30` | `INCOMPLETE` | `INCOMPLETE` | 14 | 13 | PASS | PARTIAL |
+| `case_21` | `COMPLETE` | `COMPLETE` | 3 | 3 | PASS | PASS |
+| `case_22` | `INCOMPLETE` | `INCOMPLETE` | 8 | 8 | PASS | PARTIAL |
+| `case_23` | `INCOMPLETE` | `INCOMPLETE` | 8 | 8 | PASS | PARTIAL |
+| `case_24` | `INCOMPLETE` | `INCOMPLETE` | 7 | 7 | PASS | PASS |
+| `case_25` | `COMPLETE` | `COMPLETE` | 3 | 3 | PASS | PASS |
+| `case_26` | `COMPLETE` | `COMPLETE` | 6 | 6 | PASS | PASS |
+| `case_27` | `COMPLETE` | `COMPLETE` | 6 | 6 | PASS | PASS |
+| `case_28` | `COMPLETE` | `COMPLETE` | 6 | 6 | PASS | PARTIAL |
+| `case_29` | `INCOMPLETE` | `INCOMPLETE` | 14 | 14 | PASS | PASS |
+| `case_30` | `INCOMPLETE` | `INCOMPLETE` | 14 | 14 | PASS | PASS |
 | `case_31` | `COMPLETE` | `COMPLETE` | 3 | 3 | PASS | PASS |
-| `case_32` | `INCOMPLETE` | `INCOMPLETE` | 5 | 5 | PASS | PASS |
+| `case_32` | `INCOMPLETE` | `INCOMPLETE` | 5 | 5 | PASS | PARTIAL |
 
 ---
 

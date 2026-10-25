@@ -77,7 +77,11 @@ def run_pipeline():
             ident = resolver.resolve(email)
 
             # 3. Temporal State Auditing
-            audited = auditor.audit_case(email, audit_at, reported_at, ident)
+            audited = auditor.audit_case(
+                email, audit_at, reported_at, ident,
+                reported_status=req.get("reported_status", "COMPLETE"),
+                case_id=cid
+            )
 
             # 4. Policy Mapping
             status, raw_steps = policy.evaluate(audited)

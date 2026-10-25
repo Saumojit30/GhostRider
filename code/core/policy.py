@@ -44,10 +44,11 @@ class PolicyEngine:
                         operation="VERIFY_RECORD_ABSENT", state="ABSENT", evidence_id=res.evidence_id
                     ))
                 elif res.system_id == "security_service" and res.state == "PRESENT":
-                    steps.append(RawStep(
-                        phase="VERIFICATION", system_id=res.system_id, resource_id=res.resource_id,
-                        operation="VERIFY_RECORD_PRESENT", state="PRESENT", evidence_id=res.evidence_id
-                    ))
+                    if res.evidence_id:
+                        steps.append(RawStep(
+                            phase="VERIFICATION", system_id=res.system_id, resource_id=res.resource_id,
+                            operation="VERIFY_RECORD_PRESENT", state="PRESENT", evidence_id=res.evidence_id
+                        ))
                 elif res.system_id == "analytics_platform" and res.state == "ANONYMIZED":
                     steps.append(RawStep(
                         phase="VERIFICATION", system_id=res.system_id, resource_id=res.resource_id,

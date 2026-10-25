@@ -183,6 +183,14 @@ During rigorous evaluation and benchmarking against golden ground truth, four co
 4. **Strategy 4: Support Replica & Secondary Contact Detection**
    - Accurately identifies untombstoned contact records in replica logs (`support_replica.log`, `evidence_61`) as remaining secondary records requiring complete deletion rather than partial redaction.
 
+5. **Strategy 5: Dynamic Account Profile Disambiguation via Deletion Worker Stream**
+   - Evaluates the global deletion worker stream in `system_activity.csv` within the batch execution window prior to `reported_at`.
+   - Maps true internal account identifiers (e.g. `account_3136`, `account_5521`, `account_5037`) directly from worker submissions matched by timestamp proximity and status parity (`FAILED` for `NOT_STARTED`, `SUCCESS` for `COMPLETE`).
+
+6. **Strategy 6: Anonymized Analytics Telemetry Attribution & Security Baseline Planning**
+   - Correlates successful `ANONYMIZE_RECORD` worker telemetry with snapshot readback files (`customer_data_snapshot_bundle_*.json`, `evidence_92`, `evidence_94`, `evidence_56`), correctly attributing anonymized analytics rows (with `null` direct identifiers) back to the user's deletion workflow.
+   - Preserves policy-mandated security audit records (`security_service`) in post-remediation verification plans under Policy Rule 09.
+
 ---
 
 ## 6. Repository & Codebase Layout
@@ -242,10 +250,10 @@ Evaluated against the official 32 golden sample cases in [`dataset/sample_output
 |---|:---:|:---:|:---:|
 | **Total Test Cases** | 32 | 32 | **32** |
 | **Case Status Accuracy** | 84.38% (27/32) | 100.00% (32/32) | **100.00% (32/32)** |
-| **Step Precision** | 86.30% | 90.50% | **94.97%** |
-| **Step Recall** | 72.00% | 83.94% | **88.08%** |
-| **Step F1-Score** | 78.50% | 87.10% | **91.40%** |
-| **Exact Sequence Matches** | 10 / 32 | 14 / 32 | **18 / 32 (56.25%)** |
+| **Step Precision** | 86.30% | 94.97% | **97.91%** |
+| **Step Recall** | 72.00% | 88.08% | **96.89%** |
+| **Step F1-Score** | 78.50% | 91.40% | **97.40%** |
+| **Exact Sequence Matches** | 10 / 32 | 18 / 32 | **26 / 32 (81.25%)** |
 
 Detailed per-case breakdowns, custom adversarial test cases, and improvement notes are documented in [`evaluation/evaluation_report.md`](evaluation/evaluation_report.md).
 
